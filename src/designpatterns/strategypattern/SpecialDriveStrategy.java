@@ -3,8 +3,8 @@ package designpatterns.strategypattern;
 public class SpecialDriveStrategy implements DriveStrategy {
 
 	@Override
-	public String getDriveStrategy() {
-		return "special drive strategy";
+	public void drive() {
+		System.out.println("Special");
 	}
 
 }

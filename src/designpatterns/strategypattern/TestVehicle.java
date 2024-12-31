@@ -3,13 +3,14 @@ package designpatterns.strategypattern;
 public class TestVehicle {
 
 	public static void main(String[] args) {
-		Vehicle tempo = new GoodsVehicle("Tempo");
-		Vehicle racingBike = new SportsVehicle("Racing Bike");
-		Vehicle truck = new OffRoadVehicle("Truck");
+		Vehicle tempo = new Vehicle(new NormalDriveStrategy(), "Tempo");
+		Vehicle racingBike = new Vehicle(new SpecialDriveStrategy(), "Racing Bike");
 
 		tempo.drive();
 		racingBike.drive();
-		truck.drive();
+
+		racingBike.setDriveStrategy(new NormalDriveStrategy());
+		racingBike.drive();
 	}
 
 }
